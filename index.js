@@ -21,6 +21,10 @@ const corsConfig = {
 app.use(cors(corsConfig))
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Bienvenido a mi proyecto final de Back-End Node.js");
+});
+
 app.use("/api", rutasLog)
 
 app.use((req, res, next) => {
