@@ -20,7 +20,7 @@ export const deleteProductService = async (id) => {
     new Promise(async (res, rej) => {
       try{
         await eliminarProducto(id)
-        console.log("despues de eliminar el producto")
+        console.log("Despues de eliminar el producto")
         res()
       }catch(error){
         rej(error)
@@ -28,20 +28,6 @@ export const deleteProductService = async (id) => {
     })
   )
 }
-
-/*
-export const editProductService = async (id, product) => {
-  return(
-    new Promise(async (res, rej) => {
-      try{
-        const newProduct = await actualizarProducto(id, product)
-        res(newProduct)
-      }catch(error){
-        rej(error)
-      }
-    })
-  )
-}*/
 
 export const getAllProductsService = async () => {
   return(

@@ -7,9 +7,6 @@ import * as productService from "../services/products.services.js"
 export const addProduct = async (req, res) => {
     try{
         const product = req.body;
-        //
-        console.log("BODY recibido:", req.body);
-        //
         const newProduct = await productService.addProductService(product)
         res.status(200).json(newProduct);
     }catch(error){
@@ -22,7 +19,7 @@ export const deleteProduct = async (req, res) => {
         const id = req.params.id;
         if(id){
             await productService.deleteProductService(id)
-            res.sendStatus(200)//status(200)//.send()
+            res.sendStatus(200)
         }else{
             res.status(400).json(error)
         }
